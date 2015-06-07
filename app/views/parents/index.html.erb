@@ -21,6 +21,7 @@
         <td><%= parent.car_model %></td>
         <td><%= parent.license_plate %></td>
         <td><%= parent.students.count %></td>
+        <% if parent == current_parent %>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_parent_path(parent), :class => 'btn btn-default btn-xs' %>
@@ -30,6 +31,7 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
