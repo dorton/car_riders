@@ -1,6 +1,6 @@
 <%- model_class = Parent -%>
 <div class="page-header">
-  <h1><%= @parent.name  %></h1>
+  <h1><%= @parent.name.titleize  %></h1>
 </div>
 
 <% if @parent == current_parent %>
@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
   <dd><%= @parent.email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @parent.name %></dd>
+  <dd><%= @parent.name.titleize %></dd>
   <dt><strong><%= model_class.human_attribute_name(:car_model) %>:</strong></dt>
   <dd><%= @parent.car_model %></dd>
   <dt><strong><%= model_class.human_attribute_name(:license_plate) %>:</strong></dt>
@@ -20,7 +20,7 @@
 <% @parent.students.each do |student| %>
   <p>
     <strong>Name:</strong>
-    <%= student.name %>
+    <%= student.name.titleize %>
   </p>
 
   <p>
@@ -30,7 +30,7 @@
 
   <p>
     <strong>Teacher:</strong>
-    <%= student.homeroom_teacher %>
+    <%= student.homeroom_teacher.titleize %>
   </p>
 
   <%= link_to 'Delete', [student.parent, student],
