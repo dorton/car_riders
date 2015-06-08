@@ -1,4 +1,8 @@
 <h1>Car Riders</h1>
-<p>Welcome Page</p>
 
+<% if parent_signed_in? %>
+
+<h2>  <%= "Welcome #{current_parent.name.titleize}"  %></h2>
+<% else %>
 <h2><%= link_to 'Parent Sign In', parents_path %></h2>
+<% end %>
